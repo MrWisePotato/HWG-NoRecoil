@@ -485,7 +485,7 @@ public abstract class AzureAnimatedGunItem extends Item {
                 .getItem() instanceof AzureAnimatedGunItem gunBase
         ) {
             if (player.level().isClientSide()) {
-                var baseRecoilX = player.level().getRandom().nextBoolean() ? 0f : -1f;
+                var baseRecoilX = player.level().getRandom().nextBoolean() ? 0f : 0f;
                 var recoilY = 0f;
                 ClientUtils.getClientPlayer().turn(baseRecoilX * 0, -recoilY * 0);
             }
@@ -508,9 +508,9 @@ public abstract class AzureAnimatedGunItem extends Item {
             else
                 gunBase.autoFire(player.getItemInHand(player.getUsedItemHand()), player.level(), player);
             if (player.level().isClientSide()) {
-                var baseRecoilX = player.level().getRandom().nextBoolean() ? 1f : -1f;
-                var recoilY = 1.25f;
-                ClientUtils.getClientPlayer().turn(baseRecoilX * 5, -recoilY * 5);
+                var baseRecoilX = player.level().getRandom().nextBoolean() ? 0f : 0f;
+                var recoilY = 0f;
+                ClientUtils.getClientPlayer().turn(baseRecoilX * 0, -recoilY * 0);
             }
         } else {
             player.level()
